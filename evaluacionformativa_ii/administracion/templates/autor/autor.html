@@ -1,0 +1,103 @@
+{% extends "comun/base.html" %}
+
+
+{% block content %}
+
+{% for autor in autor %}
+
+<section>
+  <!-- buscador -->
+  <!-- Categorias -->
+  <!-- Emprendimientos -->
+  
+  <h1 class="alert alert text-center" style="background-color: #7a2222; color: aliceblue;">Autor</h1>
+  <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-black">
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body class="w3-content" style="max-width:1800px">
+
+<!-- First Grid: Logo & About -->
+<div class="w3-row">
+  <div class="w3-half w3 w3-container" style="height:600px">
+    <div class="w3-padding-64 w3-center" style="background-color: #EAF2F8;">
+      <h1>{{ autor.first_name }}  {{ autor.last_name }} </h1>
+      <img src="/media/{{ autor.foto }}" class="w3-margin w3-circle" alt="Person" style="width:40%">
+      <div class="w3-left-align w3-padding-large">
+        <p>Empresaria, visionaria con el proósito de traer un poco de China a Vilcabamba</p>
+        <p>Logra radicarse tras varios años en el país y formar una familia con vision y compromiso</p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-half w3 w3-container" style="min-height:600px">
+    <div class="w3-padding-64 w3-center" style="background-color: #EAF2F8;">
+      <h2>Información</h2>
+      <div class="w3-container w3-responsive">
+        <table class="w3-table">
+          <br>
+          <tr class="w3-white">
+            <td>1.</td>
+            <td>Cédula</td>
+            <td>{{autor.cedula}}</td>
+          </tr>
+          <br>
+          <tr>
+            <td>2.</td>
+            <td>Correo</td>
+            <td>{{ autor.email }}</td>
+          </tr>
+          <br>
+          <tr class="w3-white">
+            <td>3.</td>
+            <td>Dirección</td>
+            <td>{{autor.direccion}}</td>
+          </tr>
+          <tr>
+            <td>4.</td>
+            <td>Celular</td>
+            <td>{{autor.celular}}</td>
+          </tr>
+          <tr class="w3-white">
+            <td>5.</td>
+            <td>Estudios</td>
+            {% for estudio in estudios%}
+            <td>{{estudio.insti}}</td>
+            {%endfor%}
+          </tr>
+          <tr class="w3-white">
+            <td>6.</td>
+            <td>Cursos</td>
+            {% for curso in cursos%}
+            <td>{{curso.titulo}}</td>
+            {%endfor%}
+          </tr>
+          <tr class="w3-white">
+            <td>7.</td>
+            <td>Experiencia</td>
+            {% for experiencia in experiencias%}
+            <td>{{experiencia.nombre_emp}}</td>
+            {%endfor%}
+          </tr>
+        </table>
+      </div>
+    </div>
+    <br>
+    <div class="w3-col m4 w3-hide-small">
+        <a type="button"class="button1" 
+        style = "padding: 15px; margin: 5% auto" 
+        href="/administracion/investigaciones/listado">
+        <b> Regresar »</b></a>
+      </div>
+  </div>
+</div>
+</div>
+
+</body>
+</html>
+</section>
+{% endfor %}
+{% endblock %}

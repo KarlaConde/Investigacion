@@ -1,0 +1,53 @@
+<!--aqui va el enlace con el head-->
+{% extends "comun/base.html" %}
+
+{% block content %}
+    
+<section class ="container">
+  <br>
+  <h1 style = "font-family:Lucida Bright;">Categorias de investigación</h1>
+  <div class="row">
+    {% for categoria in categorias %}
+     <div class="card m-2" style="width: 15.7rem; padding: 15px">
+          <img src="/media/{{categoria.foto}}"  class="card-img-top" alt="...">
+         <div class="card-body">
+            <h4 class="card-title" style = "font-family:Lucida Bright;  padding: 0 3px 15px 5px;" align="center" >{{ categoria.categoria_investigacion }}</h5>
+              <p class="card-text" style = "font-family:Lucida Bright;  padding: 0 3px 15px 5px;" align="center" >{{ categoria.descripcion }}.</p>
+            <center><a href="/administracion/investigaciones/listado/{{categoria.id}}" class="boton1" >Leer más</a></center>
+         </div>
+       </div>
+       
+      {% endfor %}
+
+  </section>
+  <br>
+<section class= "container" >
+ <!-- Button trigger modal -->
+ <button type="button" class="btn btn-primary btn-floating btn-lg" data-mdb-toggle="modal" data-mdb-target="#myModal">
+  <i class="fab fa-airbnb fa-lg pe-none"></i>
+</button>
+
+ <!-- Modal -->
+ <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+   aria-hidden="true">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="exampleModalLabel">Title</h5>
+         <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+       </div>
+       <div class="modal-body">...</div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+           Close
+         </button>
+         <button type="button" class="btn btn-primary">Save changes</button>
+       </div>
+     </div>
+   </div>
+ </div>
+  </section>
+
+
+  
+ {% endblock  %}

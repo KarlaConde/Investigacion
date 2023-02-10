@@ -1,0 +1,61 @@
+{% extends "comun/base.html" %}
+
+
+{% block content %}
+
+<section>
+  <!-- buscador -->
+  <!-- Categorias -->
+  <!-- Emprendimientos -->
+  <h1 class="alert alert text-center" style="background-color: #7a2222; color: aliceblue;">Listado de autores </h1>
+  <div class="row text-center m-4">
+    {% for investiga in autores %}
+      <div class="card m-4" style="width: 18rem; padding: 15px">
+        <img src="/media/{{ investiga.foto }}" class="card-img-top" width="400" height="330">
+        <div class="card-body">
+          <h5 class="card-title" style="padding: 15px" >{{ investiga.first_name }} {{ investiga.last_name }}</h5>
+          <a href="/administracion/autores/autor/{{ investiga.id }}" class="boton1" >Visitar Autor</a>
+        </div>
+      </div>
+    {% endfor  %}
+  
+  </div>
+
+</section>
+
+<section>
+  {% comment %} <!-- modales -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div> {% endcomment %}
+</section>
+<section>
+    <!-- Destacados -->
+
+</section>
+<section>
+    <!-- mapa -->
+
+</section>
+
+{% endblock %}
